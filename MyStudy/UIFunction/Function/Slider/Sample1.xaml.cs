@@ -1,4 +1,8 @@
-﻿using System.Text;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -11,20 +15,18 @@ using System.Windows.Shapes;
 
 /*
  * Author: Joey
- * Key point:
- * 1.
- *  
- * Other:
- * a. Important mark: IPT:
+ * Referenc:
+ * 1. https://www.youtube.com/watch?v=IGIJ9lNad_I 2:42
+ * 
  */
-namespace UIFunction
+namespace UIFunction.Function.Slider
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Sample1.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Sample1 : UserControl
     {
-        public MainWindow()
+        public Sample1()
         {
             InitializeComponent();
         }

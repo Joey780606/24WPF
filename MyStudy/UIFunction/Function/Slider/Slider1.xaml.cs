@@ -1,4 +1,8 @@
-﻿using System.Text;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -9,22 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-/*
- * Author: Joey
- * Key point:
- * 1.
- *  
- * Other:
- * a. Important mark: IPT:
- */
-namespace UIFunction
+namespace UIFunction.Function.Slider
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Slider1.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Slider1 : UserControl
     {
-        public MainWindow()
+        public Slider1()
         {
             InitializeComponent();
         }

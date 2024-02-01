@@ -4,9 +4,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UIFunction"
+        xmlns:slider="clr-namespace:UIFunction.Function.Slider"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" WindowStartupLocation="CenterScreen" WindowStyle="None" Background="LightBlue" Width="1600" Height="900">
     <Grid>
-
+        <slider:Slider1>
+        </slider:Slider1>
     </Grid>
 </Window>
