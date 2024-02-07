@@ -5,10 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UIFunction"
         xmlns:slider="clr-namespace:UIFunction.Function.Slider"
+        xmlns:border="clr-namespace:UIFunction.Function.Border"
         mc:Ignorable="d"
         Title="MainWindow" WindowStartupLocation="CenterScreen" WindowStyle="None" Background="LightBlue" Width="1600" Height="900">
     <Grid>
-        <slider:Slider1>
-        </slider:Slider1>
+        <!-- <slider:Slider1> -->
+        <!-- </slider:Slider1> -->
+        <border:Border1></border:Border1>
     </Grid>
 </Window>
