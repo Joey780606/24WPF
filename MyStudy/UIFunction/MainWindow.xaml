@@ -17,6 +17,7 @@
         <!-- <border:Border1></border:Border1> -->
         <!-- <canvas:Path2></canvas:Path2> -->
         <!-- <myprogressBar:Circle1></myprogressBar:Circle1> -->
-        <mystyle:Style1></mystyle:Style1>
+        <!--  <mystyle:Style1></mystyle:Style1> -->
+        <mystyle:Style2></mystyle:Style2>
     </Grid>
 </Window>

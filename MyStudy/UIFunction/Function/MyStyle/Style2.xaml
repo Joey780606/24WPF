@@ -1,0 +1,66 @@
+﻿<UserControl x:Class="UIFunction.Function.MyStyle.Style2"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UIFunction.Function.MyStyle"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <!-- Important: Title="Template Intro Sample" SizeToContent="WidthAndHeight" doesn't support UserControl -->
+    <UserControl.Resources>
+        <ControlTemplate x:Key="roundbutton" TargetType="Button">
+            <Grid>
+                <!-- 原本是醬,可運作 -->
+                <!-- <Ellipse Fill="{TemplateBinding Background}" Stroke="{TemplateBinding Foreground}" /> -->
+
+                <!-- 後來改醬,目的是下方的Trigger效果 -->
+                <Ellipse x:Name="backgroundElement" Fill="{TemplateBinding Background}" Stroke="{TemplateBinding Foreground}" />
+                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+            </Grid>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="true">
+                    <!-- 看起來 TargetName 會對應到上面的 x:Name -->
+                    <Setter Property="Fill" TargetName="backgroundElement" Value="AliceBlue"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="roundbutton2" TargetType="Button">
+            <Grid>
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup Name="ConnonStates">
+                        <VisualState Name="Normal">
+                            <Storyboard>
+                                <ColorAnimation Storyboard.TargetName="backgroundElement"
+                                    Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)"
+                                    To="{TemplateBinding Background}"
+                                    Duration="0:0:1.1"/>
+                            </Storyboard>
+                        </VisualState>
+                        <VisualState Name="MouseOver">
+                            <Storyboard>
+                                <ColorAnimation Storyboard.TargetName="backgroundElement"
+                                    Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)"
+                                    To="Yellow"
+                                    Duration="0:0:1.1"/>
+                            </Storyboard>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+                <Ellipse Name="backgroundElement" Fill="{TemplateBinding Background}" Stroke="{TemplateBinding Foreground}" />
+                <!-- 如果下面一行註解, 圓畫的出來,動畫顯示的出來,但是Button 4顯示不出來 -->
+                <ContentPresenter x:Name="contentPresenter" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            </Grid>
+        </ControlTemplate>
+    </UserControl.Resources>
+    <Grid>
+        <StackPanel Margin="10">
+            <Label>Unstyled Button</Label>
+            <Button>Button 1</Button>
+            <Label>Rounded Button</Label>
+            <Button Template="{StaticResource roundbutton}">Button 2</Button>
+            <Button Template="{StaticResource roundbutton}" Width="65" Height="65">Button 3</Button>
+            <Button Template="{StaticResource roundbutton2}" Width="65" Height="65">Button 4</Button>
+        </StackPanel>
+    </Grid>
+</UserControl>
