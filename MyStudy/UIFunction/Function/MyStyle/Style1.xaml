@@ -1,0 +1,79 @@
+﻿<UserControl x:Class="UIFunction.Function.MyStyle.Style1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UIFunction.Function.MyStyle"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <!-- 有二個測試,下方是第一個 -->
+        <!-- Style 01: 這會影響到所有的TextBlocks -->
+        <Style TargetType="TextBlock">
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="FontFamily" Value="Comic Sans MS" />
+            <Setter Property="FontSize" Value="14" />
+        </Style>
+
+        <!-- Style 02: extends之前的 TextBlocks style與一個 x:Key 的 TitleText-->
+        <Style BasedOn="{StaticResource {x:Type TextBlock}}"
+            TargetType="TextBlock"
+            x:Key="TitleText">
+            <Setter Property="FontSize" Value="26"/>
+            <Setter Property="Foreground">
+                <Setter.Value>
+                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Offset="0.0" Color="#90DDDD" />
+                            <GradientStop Offset="1.0" Color="#5BFFFF" />
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- 有二個測試,下方是第二個,參: https://www.huanlintalk.com/2012/11/wpf-controltemplate-datatemplate.html -->
+        <ControlTemplate x:Key="simpleTemplate" TargetType="ContentControl">
+            <ContentPresenter
+                Content="{TemplateBinding Content}"
+                ContentTemplate="{TemplateBinding ContentTemplate}">
+            </ContentPresenter>
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="myCheckBoxTemplate" TargetType="CheckBox">
+            <Border Margin="4" Padding="4" BorderThickness="1" BorderBrush="Red" >
+                <ContentPresenter
+                    Content="{TemplateBinding Content}"
+                    ContentTemplate="{TemplateBinding ContentTemplate}">
+                </ContentPresenter>
+            </Border>
+        </ControlTemplate>
+
+        <DataTemplate x:Key="myDataTemplate">
+            <StackPanel Orientation="Horizontal">
+                <Button Content="OK" Margin="4" />
+                <Button Content="Cancel" Margin="4" />                
+            </StackPanel>
+        </DataTemplate>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackPanel>
+            <!-- 因為有設 TitleText,所以用Style 02 -->
+            <TextBlock Style="{StaticResource TitleText}" Name="textblock1">My Pictures</TextBlock>
+            <!-- 因為有設 TitleText,所以用Style 01 -->
+            <TextBlock>Check out my new pictures!</TextBlock>
+        </StackPanel>
+        <StackPanel Grid.Row="1">
+            <CheckBox Content="CheckBox 1" Template="{StaticResource simpleTemplate}" />
+            <CheckBox Content="CheckBox 2" Template="{StaticResource myCheckBoxTemplate}"  Background="#B7B7B7"/>
+            <CheckBox Content="CheckBox 3" ContentTemplate="{StaticResource myDataTemplate}" />
+            <CheckBox Content="CheckBox 4" 
+                      Template="{StaticResource myCheckBoxTemplate}" 
+                      ContentTemplate="{StaticResource myDataTemplate}" />
+        </StackPanel>
+    </Grid>
+</UserControl>

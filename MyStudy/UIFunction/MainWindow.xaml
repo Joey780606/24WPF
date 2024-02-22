@@ -8,6 +8,7 @@
         xmlns:border="clr-namespace:UIFunction.Function.Border"
         xmlns:canvas="clr-namespace:UIFunction.Function.Canvas"
         xmlns:myprogressBar="clr-namespace:UIFunction.Function.ProgressBar"
+        xmlns:mystyle="clr-namespace:UIFunction.Function.MyStyle"
         mc:Ignorable="d"
         Title="MainWindow" WindowStartupLocation="CenterScreen" WindowStyle="None" Background="LightBlue" Width="1600" Height="900">
     <Grid>
@@ -15,6 +16,7 @@
         <!-- </slider:Slider1> -->
         <!-- <border:Border1></border:Border1> -->
         <!-- <canvas:Path2></canvas:Path2> -->
-        <myprogressBar:Circle1></myprogressBar:Circle1>
+        <!-- <myprogressBar:Circle1></myprogressBar:Circle1> -->
+        <mystyle:Style1></mystyle:Style1>
     </Grid>
 </Window>
