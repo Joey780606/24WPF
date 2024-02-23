@@ -31,6 +31,7 @@
                     <VisualStateGroup Name="ConnonStates">
                         <VisualState Name="Normal">
                             <Storyboard>
+                                <!-- 重要: Storyboard.TargetName會對應到 Name 的名稱,在下方 -->
                                 <ColorAnimation Storyboard.TargetName="backgroundElement"
                                     Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)"
                                     To="{TemplateBinding Background}"
@@ -48,7 +49,7 @@
                     </VisualStateGroup>
                 </VisualStateManager.VisualStateGroups>
                 <Ellipse Name="backgroundElement" Fill="{TemplateBinding Background}" Stroke="{TemplateBinding Foreground}" />
-                <!-- 如果下面一行註解, 圓畫的出來,動畫顯示的出來,但是Button 4顯示不出來 -->
+                <!-- 重要: 如果下面一行註解, 圓畫的出來,動畫顯示的出來,但是Button 4顯示不出來 -->
                 <ContentPresenter x:Name="contentPresenter" HorizontalAlignment="Center" VerticalAlignment="Center" />
             </Grid>
         </ControlTemplate>
