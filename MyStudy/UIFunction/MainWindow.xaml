@@ -15,12 +15,12 @@
     <Grid>
         <!-- <slider:Slider1> -->
         <!-- </slider:Slider1> -->
-        <!-- <border:Border1></border:Border1> -->
+        <border:Border1></border:Border1>
         <!-- <canvas:Path2></canvas:Path2> -->
         <!-- <myprogressBar:Circle1></myprogressBar:Circle1> -->
         <!-- <mystyle:Style1></mystyle:Style1> -->
         <!-- <mystyle:Style2></mystyle:Style2> -->
         <!-- <workitem:Detail0_1></workitem:Detail0_1> -->
-        <workitem:Detail0_2></workitem:Detail0_2>
+        <!-- <workitem:Detail0_2></workitem:Detail0_2> -->
     </Grid>
 </Window>

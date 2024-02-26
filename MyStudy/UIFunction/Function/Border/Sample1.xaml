@@ -53,6 +53,33 @@
             </Setter>
         </Style>
 
+        <Style x:Key="TbMouseOver" TargetType="TextBox">
+            <Setter Property="Background" Value="#BED591"/>
+            <Setter Property="Foreground" Value="#ffee11"/>
+            <Setter Property="BorderThickness" Value="3" />
+            <Setter Property="Text" Value="aaa" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <!-- ControlTemplate:讓自訂控制項的外觀修改為目前控制項無法設定的屬性,但因預設 TextBox(或很多元件)的IsMouseOver值都無法用Setter直接變更,所以要再修改本身TextBox的屬性 -->
+                    <ControlTemplate TargetType="TextBox">
+                        <!-- TemplateBinding:跟父元件的參數一起結合 -->
+                        <Border x:Name="border"                               
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                Padding="{TemplateBinding Padding}">
+                            <!-- PART_ContentHost的用法參: https://learn.microsoft.com/en-us/dotnet/desktop/wpf/controls/textbox-styles-and-templates?view=netframeworkdesktop-4.8 -->
+                            <ScrollViewer Margin="0" x:Name="PART_ContentHost" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="#EE2D2D"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </UserControl.Resources>
     <Grid>
         <TextBox BorderBrush="Aqua" BorderThickness="3" HorizontalAlignment="Left" Margin="22,18,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
@@ -60,5 +87,7 @@
 
         <TextBox HorizontalAlignment="Left" Margin="22,98,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Height="30" Style="{StaticResource TbBorderMouse}"/>
         <Button Content="Button" HorizontalAlignment="Left" Margin="22,133,0,0" VerticalAlignment="Top" Width="120" Height="30" Style="{StaticResource BtnBorderMouse}"/>
+
+        <TextBox BorderBrush="Aqua" HorizontalAlignment="Left" Margin="22,178,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Height="30" Style="{StaticResource TbMouseOver}"/>
     </Grid>
 </UserControl>
