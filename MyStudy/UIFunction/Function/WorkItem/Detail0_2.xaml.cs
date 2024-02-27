@@ -17,7 +17,7 @@ using System.Windows.Shapes;
  * Author: Joey
  * Reference:
  *  1. https://learn.microsoft.com/zh-tw/dotnet/standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously
- *  2. 疑似失敗的原因: https://blog.csdn.net/yl2isoft/article/details/11711833
+ *  2. 疑似失敗的原因: https://blog.csdn.net/yl2isoft/article/details/11711833, .NET Core不支援委托的BeginInvoke方法
  */
 namespace UIFunction.Function.WorkItem
 {
