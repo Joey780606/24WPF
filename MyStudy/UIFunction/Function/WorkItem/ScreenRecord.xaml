@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="UIFunction.Function.WorkItem.ScreenRecord"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UIFunction.Function.WorkItem"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <StackPanel Orientation="Vertical" Background="AliceBlue" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button Name="StartRecord" Content="Start record" HorizontalAlignment="Left" Margin="10" VerticalAlignment="Top" RenderTransformOrigin="0.509,2.5" Click="StartRecord_Click" />
+
+            <Button Name="StopRecord" Content="Stop record" HorizontalAlignment="Left" Margin="10" VerticalAlignment="Top" Click="StopRecord_Click" />
+        </StackPanel>            
+    </Grid>
+</UserControl>

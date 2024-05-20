@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.DirectoryServices.ActiveDirectory;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -41,7 +43,8 @@ namespace UIFunction.Function.WorkItem
 
             foreach (var i in scoreQuery)
             {
-                Console.WriteLine("Result: {0} ", i);
+                //Console.WriteLine("Result: {0} ", i);
+                Debug.WriteLine("Result: {0} ", i);
             }
         }
     }
