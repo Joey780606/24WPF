@@ -9,6 +9,9 @@
     <Grid>
         <StackPanel Orientation="Horizontal" Background="AliceBlue" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Button Name="Test1" Content="Test1" HorizontalAlignment="Left" Margin="10" VerticalAlignment="Top" RenderTransformOrigin="0.509,2.5" Click="Test1_Click"/>
+            <Button Name="Test2" Content="Test2" HorizontalAlignment="Left" Margin="10" VerticalAlignment="Top" Click="Test2_Click"  />
+            <Button Name="Test3" Content="Test3" HorizontalAlignment="Left" Margin="10" VerticalAlignment="Top" Click="Test3_Click"  />
+            <Button Name="Test4" Content="Test4" HorizontalAlignment="Left" Margin="10" VerticalAlignment="Top" Click="Test4_Click"  />
         </StackPanel>
 
     </Grid>
