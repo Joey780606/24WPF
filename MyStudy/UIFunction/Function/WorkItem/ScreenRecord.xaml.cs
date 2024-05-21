@@ -15,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
 using System.Diagnostics;
+using System.Drawing;
 
 /*
  * Author: Joey Yang
@@ -164,6 +165,30 @@ namespace UIFunction.Function.WorkItem
         private void StopRecord_Click(object sender, RoutedEventArgs e)
         {
             _rec.Stop();
+        }
+
+        private void ScreenShot_Click(object sender, RoutedEventArgs e)
+        {
+            // Reference: https://stackoverflow.com/questions/34837286/wpf-take-a-screenshot-and-save-it
+            double screenLeft = SystemParameters.VirtualScreenLeft;
+            double screenTop = SystemParameters.VirtualScreenTop;
+            double screenWidth = SystemParameters.VirtualScreenWidth;
+            double screenHeight = SystemParameters.VirtualScreenHeight;
+
+            using (Bitmap bmp = new Bitmap((int)screenWidth,
+                (int)screenHeight))
+            {
+                using (Graphics g = Graphics.FromImage(bmp))
+                {
+                    String filename = "ScreenCapture-" + DateTime.Now.ToString("ddMMyyyy-hhmmss") + ".png";
+                    Opacity = .0;
+                    g.CopyFromScreen((int)screenLeft, (int)screenTop, 0, 0, bmp.Size);
+                    string jpgPath = System.IO.Path.Combine(System.IO.Path.GetTempPath(), filename);
+                    bmp.Save(jpgPath);
+                    Opacity = 1;
+                }
+
+            }
         }
     }
 }

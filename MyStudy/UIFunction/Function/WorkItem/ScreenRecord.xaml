@@ -11,6 +11,8 @@
             <Button Name="StartRecord" Content="Start record" HorizontalAlignment="Left" Margin="10" VerticalAlignment="Top" RenderTransformOrigin="0.509,2.5" Click="StartRecord_Click" />
 
             <Button Name="StopRecord" Content="Stop record" HorizontalAlignment="Left" Margin="10" VerticalAlignment="Top" Click="StopRecord_Click" />
+
+            <Button Name="ScreenShot" Content="ScreenShot" HorizontalAlignment="Left" Margin="10" VerticalAlignment="Top" Click="ScreenShot_Click" />
         </StackPanel>            
     </Grid>
 </UserControl>
