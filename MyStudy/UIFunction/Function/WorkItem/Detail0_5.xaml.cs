@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.DirectoryServices.ActiveDirectory;
 using System.Linq;
+using System.Runtime;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -122,6 +123,43 @@ namespace UIFunction.Function.WorkItem
             foreach (var largeCity in largeCitiesList2)
                 Debug.WriteLine("Result 5: {0} {1}", largeCity.Name, largeCity.Population);
 
+            //====== 找出人數超過500,000的國家
+            IEnumerable<Country> countryAreaQuery =
+                from country in countries
+                where country.Area > 500000 //sq km
+                select country;
+            var countryInfos = countryAreaQuery.ToList();
+
+            foreach (var countryInfo in countryInfos)
+                Debug.WriteLine("Result 6: {0} {1}", countryInfo.Name, countryInfo.Population);
+
+            //===== 假設您有 Country 物件集合，各包含名為 Cities的 City 物件。 若要查詢每個 Country 中的 City 物件，請使用兩個 from 子句
+            IEnumerable<City> cityQuery =
+                from country in countries
+                from city in country.Cities     //重要,要用到二個from
+                where city.Population > 10000
+                select city;
+            var cityInfos = cityQuery.ToList();
+
+            foreach (var cityInfo in cityInfos)
+                Debug.WriteLine("Result 7: {0} {1}", cityInfo.Name, cityInfo.Population);
+
+            //===== Group的使用
+            // 參: https://learn.microsoft.com/zh-tw/dotnet/csharp/language-reference/keywords/group-clause
+            var queryCountryGroups =
+                from country in countries
+                group country by country.Name[0];
+            var countryInfos2 = queryCountryGroups;
+
+            foreach (IGrouping<char, Country> countryGroup in countryInfos2)
+            {
+                Debug.WriteLine("Result 8-0: {0}", countryGroup.Key);
+                // Explicit type for student could also be used here.
+                foreach (var country in countryGroup)
+                {
+                    Debug.WriteLine("Result 8-1:    {0}, {1}", country.Name, country.Cities);
+                }
+            }
         }
 
         private void Test4_Click(object sender, RoutedEventArgs e)
@@ -148,6 +186,6 @@ namespace UIFunction.Function.WorkItem
 
         }
 
-        //看到 啟動查詢運算式
+        //看到 使用 select 子句來產生所有其他類型的序列
     }
 }
