@@ -25,6 +25,7 @@
         <!-- <workitem:Detail0_3></workitem:Detail0_3> -->
         <!-- <workitem:Detail0_4></workitem:Detail0_4> -->
         <!-- <workitem:ScreenRecord></workitem:ScreenRecord> -->
-        <workitem:PCShutdown></workitem:PCShutdown>
+        <!-- <workitem:PCShutdown></workitem:PCShutdown> -->
+        <workitem:JsonTest></workitem:JsonTest>
     </Grid>
 </Window>
