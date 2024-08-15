@@ -6,12 +6,26 @@
              xmlns:local="clr-namespace:UIFunction.Function.WorkItem"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <FontFamily x:Key="Gotham-Font1">
+            pack://application:,,,/Font/Gotham-ThinIta.otf#Gotham Thin
+        </FontFamily>
+        <FontFamily x:Key="Gotham-Font2">
+            ../../Font/Gotham-ThinIta.otf#Gotham Thin
+        </FontFamily>
+        <FontFamily x:Key="Gotham-Font3">
+            ../../Font/#Gotham Bold"
+        </FontFamily>
+    </UserControl.Resources>
     <Grid>
         <Button x:Name="JsonTest1" Content="ChangeToJson" HorizontalAlignment="Left" Margin="183,50,0,0" VerticalAlignment="Top" Click="JsonTest1_Click"/>
         <Button x:Name="JsonTest2" Content="JsonToClass" HorizontalAlignment="Left" Margin="184,74,0,0" VerticalAlignment="Top" Width="86" Click="JsonTest2_Click"/>
         <Button x:Name="JsonTest3" Content="Version little test" HorizontalAlignment="Left" Margin="184,98,0,0" VerticalAlignment="Top" Width="134" Click="JsonTest3_Click"/>
         <Button x:Name="JsonTest4" Content="JsonFrankTest" HorizontalAlignment="Left" Margin="183,144,0,0" VerticalAlignment="Top" Click="JsonTest4_Click"/>
         <Button x:Name="JsonTest5" Content="JsonParse" HorizontalAlignment="Left" Margin="184,168,0,0" VerticalAlignment="Top" Width="82" Click="JsonTest5_Click"/>
-
+        <TextBlock HorizontalAlignment="Left" FontSize="20"  Margin="43,254,0,0" TextWrapping="Wrap" Text="Change Font 1" VerticalAlignment="Top" FontFamily="{StaticResource Gotham-Font1}"/>
+        <TextBlock HorizontalAlignment="Left" FontSize="20" Margin="43,283,0,0" TextWrapping="Wrap" Text="Change Font 2" VerticalAlignment="Top" FontFamily="{StaticResource Gotham-Font2}"/>
+        <TextBlock HorizontalAlignment="Left" FontSize="20" Margin="43,312,0,0" TextWrapping="Wrap" Text="Change Font 3" VerticalAlignment="Top" FontFamily="{StaticResource Gotham-Font3}"/>
     </Grid>
 </UserControl>
