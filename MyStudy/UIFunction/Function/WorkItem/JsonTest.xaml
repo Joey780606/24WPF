@@ -27,5 +27,6 @@
         <TextBlock HorizontalAlignment="Left" FontSize="20"  Margin="43,254,0,0" TextWrapping="Wrap" Text="Change Font 1" VerticalAlignment="Top" FontFamily="{StaticResource Gotham-Font1}"/>
         <TextBlock HorizontalAlignment="Left" FontSize="20" Margin="43,283,0,0" TextWrapping="Wrap" Text="Change Font 2" VerticalAlignment="Top" FontFamily="{StaticResource Gotham-Font2}"/>
         <TextBlock HorizontalAlignment="Left" FontSize="20" Margin="43,312,0,0" TextWrapping="Wrap" Text="Change Font 3" VerticalAlignment="Top" FontFamily="{StaticResource Gotham-Font3}"/>
+        <Button x:Name="JsonTest6" Content="Version test2" HorizontalAlignment="Left" Margin="184,192,0,0" VerticalAlignment="Top" Width="82" Click="JsonTest6_Click"/>
     </Grid>
 </UserControl>
