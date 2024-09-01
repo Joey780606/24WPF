@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="UIFunction.Function.WorkItem.Battery_WifiCheck"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UIFunction.Function.WorkItem"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Button x:Name="BatteryCheckOn" Content="Check battery" HorizontalAlignment="Left" Margin="87,43,0,0" VerticalAlignment="Top" Click="BatteryCheckOn_Click"/>
+        <Button x:Name="BatteryCheckOff" Content="Stop check battery" HorizontalAlignment="Left" Margin="197,43,0,0" VerticalAlignment="Top" Click="BatteryCheckOff_Click"/>
+        <Button x:Name="BatteryInitialcheck" Content="Initial check" HorizontalAlignment="Left" Margin="324,43,0,0" VerticalAlignment="Top" Click="BatteryInitialcheck_Click"/>
+        <Button x:Name="WifiCheck1" Content="Wifi 1" HorizontalAlignment="Left" Margin="87,76,0,0" VerticalAlignment="Top" Width="73" Click="WifiCheck1_Click"/>
+        <Button x:Name="WifiCheck2" Content="Wifi 2" HorizontalAlignment="Left" Margin="197,76,0,0" VerticalAlignment="Top" Click="WifiCheck2_Click"/>
+    </Grid>
+</UserControl>

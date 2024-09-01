@@ -26,6 +26,7 @@
         <!-- <workitem:Detail0_4></workitem:Detail0_4> -->
         <!-- <workitem:ScreenRecord></workitem:ScreenRecord> -->
         <!-- <workitem:PCShutdown></workitem:PCShutdown> -->
-        <workitem:JsonTest></workitem:JsonTest>
+        <!-- <workitem:JsonTest></workitem:JsonTest> -->
+        <workitem:Battery_WifiCheck></workitem:Battery_WifiCheck>
     </Grid>
 </Window>
