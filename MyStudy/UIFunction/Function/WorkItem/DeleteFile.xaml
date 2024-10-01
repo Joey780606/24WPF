@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="UIFunction.Function.WorkItem.DeleteFile"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UIFunction.Function.WorkItem"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Margin="0,3,0,-3">
+        <Label Content="Delete the files that exist in folder over XX day.  Day was controlled by program" HorizontalAlignment="Left" Margin="30,27,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Button Content="Delete file" HorizontalAlignment="Left" Margin="37,136,0,0" VerticalAlignment="Top" Click="btn_delete_Click" FontSize="16"/>
+        <Button x:Name="btnChkFile"  Content="Check file" HorizontalAlignment="Left" Margin="39,102,0,0" VerticalAlignment="Top" FontSize="16" Click="btnChkFile_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="36,70,0,0" TextWrapping="Wrap" Text="How many days before you want to delete?" VerticalAlignment="Top" FontSize="16"/>
+        <TextBox x:Name="tbCutOffDay" HorizontalAlignment="Left" Margin="388,70,0,0" TextWrapping="Wrap" Text="60" VerticalAlignment="Top" Width="120" FontSize="16"/>
+        <Button x:Name="btnCrushTest" Content="Button" HorizontalAlignment="Left" Margin="198,191,0,0" VerticalAlignment="Top" Click="btnCrushTest_Click"/>
+
+    </Grid>
+</UserControl>
