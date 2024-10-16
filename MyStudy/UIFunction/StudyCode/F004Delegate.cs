@@ -137,7 +137,7 @@ Code area 3: 觀察者模式
         static void Main(string[] args) {
             Cat cat = new Cat("CatA", "Yellow");
             Mouse mouse1 = new Mouse("MouseA", "Black");
-            cat.catCome += mouse1.RunAway;  //讓別的觀察者老鼠的function註冊(添加到)這個委託
+            cat.catCome += mouse1.RunAway;  //極重要,讓別的觀察者老鼠的function註冊(添加到)這個委託
             Mouse mouse2 = new Mouse("MouseB", "Red");
             cat.catCome += mouse1.RunAway;  
             Mouse mouse3 = new Mouse("MouseC", "Yellow");
@@ -147,3 +147,69 @@ Code area 3: 觀察者模式
 
             cat.CatComing();
  */
+
+/*
+Code area 4: 觀察者模式(上方Code area 3)的優化,加上事件
+  1. Ref: https://www.youtube.com/watch?v=D0BDLrWsX6k&list=PLJgD_fXVXZKpI1FIW0ZtT_lLnML8uPhST&index=24
+   說明: 貓(被觀察者)和老鼠(觀察者), 在被觀察者(貓)裡提供一個委託,讓別的觀察者註冊(添加到)這個委託
+     4:56 ppt說明 (5:51 事件不能在類別的外部觸發)
+     6:13 UML圖 (但不完全相同)
+     7:45 事件,委托的區別 
+        使用中,委托常用來表達回調(callback),事件表達外發的接口
+
+  2. 貓(被觀察者)
+    class Cat
+    {
+        private string name;
+        private string color;
+
+        public Cat(string name, string color)
+        {
+            this.name = name;
+            this.color = color;
+        }
+
+        public void CatComing()
+        {
+            Console.WriteLine(color + "的貓" + name + "過來了");
+            if(catCome != null)
+                catCome();
+        }
+
+        public event Action catCome;  //重要: 聲明一個事件, 發布一個消息
+        // 2:57 如果只是 delegate,那可在 Main 裡直接使用 cat.catCome(); 但不建議這樣用,較建議直接在Cat類別裡呼叫自身的delegate
+        // 4:11 事件不能在類的外部觸發,只能在類的內部觸發, 所以使用事件會比 delegate 好
+    }
+
+  3. 老鼠
+    class Mouse
+    {
+        private string name;
+        private string color;
+
+        public Mouse(string name, string color, Cat cat)    //新增一個Cat
+        {
+            this.name = name;
+            this.color = color;
+            cat.catCome += this.RunAway;    //把自身的逃跑方法,註冊到貓裡面 訂閱一個消息
+        }
+
+        public void RunAway()
+        {
+            Console.WriteLine(color + "的老鼠" + name + "跑跑跑");
+        }
+    }
+
+  4. 主程式
+    class Program {
+        static void Main(string[] args) {
+            Cat cat = new Cat("CatA", "Yellow");
+            Mouse mouse1 = new Mouse("MouseA", "Black", cat);   //把貓加進去
+            Mouse mouse2 = new Mouse("MouseB", "Red", cat); 
+            Mouse mouse3 = new Mouse("MouseC", "Yellow", cat); 
+            Mouse mouse4 = new Mouse("MouseD", "Black", cat);
+
+            cat.CatComing();
+        }
+    }
+*/  
