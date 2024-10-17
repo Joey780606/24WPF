@@ -69,3 +69,53 @@ Code area 1:
     }
   }
 */
+
+/*
+Code area 2: 擴展方法,表達式寫法 (where)
+  1. Ref: https://www.youtube.com/watch?v=yjIrcCtPukg&list=PLJgD_fXVXZKpI1FIW0ZtT_lLnML8uPhST&index=26
+  2. MartialArtsMaster.cs, Kongfu.cs 皆與上方 Code area 1 一致
+  3. Program.cs
+  class Program {
+    static void Main(string[] args) {
+        var masterList = new List<MartialArtsMaster> () 
+        {
+            new MartialArtsMaster() {Id = 1, Name = "AA", Age = 18, Menpai = "AAA", Kongfu = "AAAA", Level = 9},
+            new MartialArtsMaster() {Id = 2, Name = "BB", Age = 70, Menpai = "AAA", Kongfu = "AAAA", Level = 10}
+        };
+
+        var kongfu = new List<Kongfu>()
+        {
+            new Kongfu() {Id = 1, Name = "AAAA", Age = 18, Power = 90},
+            new Kongfu() {Id = 2, Name = "BBBB", Age = 18, Power = 95}
+        };
+
+        // 1. 擴展方式寫法
+        var res = masterList.Where(Test1);  
+        // where ref: https://learn.microsoft.com/en-us/dotnet/api/system.linq.enumerable.where?view=net-8.0
+        // Where<TSource>(IEnumerable<TSource>, Func<TSource,Boolean>)  //後面的Func 是 delegate, 可指定一個函式,其參數是TSource,回傳值是Boolean值
+
+        // 2. 把他變成Lambda表達式
+        var res = masterList.Where(m => m.Level > 8);
+
+        // 3. 多個判斷式
+        // a. 用LINQ來做查詢
+        var res = from m in masterList  //from後設定查詢的集合
+            where m.Level > 8 && m.Menpai=="AAA"  //where後跟上查詢的條件,利用 && 添加多樣條件
+            select m;   //返回m的結果, 若純要名字,也可寫 select m.Name;
+        // b. 並列表達式
+        var res = masterList.Where(m => m.Level > 8 && m.Menpai=="AAA");
+
+        foreach (var temp in res)
+        {
+            Debug.WriteLine(temp);
+        }
+    }
+  }
+
+    static bool Test1(MartialArtsMaster master) //回傳bool是過濾方法,檢查有無符合需求
+    {
+        if(master.Level > 8) 
+            return true;
+        return false;
+    }
+*/
