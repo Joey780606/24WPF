@@ -19,7 +19,7 @@ Code area 1:
 
     public override string ToString() {
     {
-        return string.Format("Id:{0} , Name:{0} , Age:{0} , Menpai:{0} , Kongfu:{0} , Level:{0}", Id, Name, Age, Menpai, Kongfu, Level);
+        return string.Format("Id:{0} , Name:{1} , Age:{2} , Menpai:{3} , Kongfu:{4} , Level:{5}", Id, Name, Age, Menpai, Kongfu, Level);
     }
   }
 
@@ -28,6 +28,11 @@ Code area 1:
     public int Id { get; set; }
     public string Name { get; set; }
     public int Power { get; set; }
+
+    public override string ToString() {
+    {
+        return string.Format("Id:{0} , Name:{1} , Age:{2}", Id, Name, Power);
+    }
   }
 
   4. Program.cs
@@ -118,4 +123,49 @@ Code area 2: 擴展方法,表達式寫法 (where)
             return true;
         return false;
     }
+*/
+
+/*
+Code area 3: 集合聯合查詢 (二個list整合在一起做比較)
+  1. Ref: https://www.youtube.com/watch?v=t1_qSTEJ6gI&list=PLJgD_fXVXZKpI1FIW0ZtT_lLnML8uPhST&index=27
+  2. MartialArtsMaster.cs, Kongfu.cs 皆與上方 Code area 1 一致
+  3. Program.cs
+  class Program {
+    static void Main(string[] args) {
+        var masterList = new List<MartialArtsMaster> () 
+        {
+            new MartialArtsMaster() {Id = 1, Name = "AA", Age = 18, Menpai = "AAA", Kongfu = "AAAA", Level = 9},
+            new MartialArtsMaster() {Id = 2, Name = "BB", Age = 70, Menpai = "AAA", Kongfu = "AAAA", Level = 10}
+        };
+
+        var kongfu = new List<Kongfu>()
+        {
+            new Kongfu() {Id = 1, Name = "AAAA", Age = 18, Power = 90},
+            new Kongfu() {Id = 2, Name = "BBBB", Age = 18, Power = 95}
+        };
+
+        // 1. (影片3:30) LINQ 聯合查詢
+        var res = from m in masterList
+            from k in kongfuList
+            select new {master = m, kongfu = k);    //這樣會列出二個list合併的所有的資料
+
+        // 2. (影片6:20) 加入二個 list 相同名稱的判斷,這樣可以減少輸出的資料
+        var res = from m in masterList
+            from k in kongfuList
+            where m.Kongfu == k.Name
+            select new {master = m, kongfu = k);   
+
+        // 3. (影片7:00)  
+        // 取得所學功夫的殺傷力, > 90的武林高手
+        var res = from m in masterList
+            from k in kongfuList
+            where m.Kongfu == k.Name && k.Power > 90
+            select m;
+
+        foreach (var temp in res)
+        {
+            Debug.WriteLine(temp);
+        }
+    }
+  }
 */
