@@ -252,3 +252,29 @@ Code area 5: 後台線程,前台線程
         //t.Join();     //讓當前線程休眠,等待t線程執行完,再繼續運行下面的代碼
     }
 */
+
+/*
+Code area 5: 線程池
+  1. Ref: https://www.youtube.com/watch?v=iqLK9pjpFiU&list=PLJgD_fXVXZKpI1FIW0ZtT_lLnML8uPhST&index=47
+    0:00~2:16 說明重要
+      1:16 I/O Thread: 文件讀取/移動
+      2:01 Thread pool通常是為了要做小任務, 預設都是後台線程(程式結束,Thread就會自動刪除,不會等到Thread完成)
+    5:34 注意事項
+      5:54 線程池的Thread只能是後台Thread,不能改為前台Thread,
+           不能為其Thread修改名稱和優先權
+           只能用在時間較短的任務,如要一直運行(ex: word的拼寫檢查器),就應使用Thread類創建一線程.
+
+    static void ThreadMethod(object state) {    //必須帶object 參數,此參數可用來傳遞一些資料
+        Debug.WriteLine("線程開始:" + Thread.CurrentThread.ManagedThreadId);
+        Thread.Sleep(2000);
+        Debug.WriteLine("線程姞束");
+    }
+
+    static void Main(string[] args) {
+        ThreadPool.QueueUserWorkItem(ThreadMethod); //開啟一個工作線程
+        ThreadPool.QueueUserWorkItem(ThreadMethod);
+        ThreadPool.QueueUserWorkItem(ThreadMethod);
+        ThreadPool.QueueUserWorkItem(ThreadMethod);
+        ThreadPool.QueueUserWorkItem(ThreadMethod);
+    }
+*/
