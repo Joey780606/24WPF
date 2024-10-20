@@ -198,7 +198,7 @@ Code area 4: 透過Thread類
         Debug.WriteLie("Main");        
     }
 
-    c.第三版,傳遞參數 (方法二)
+    d.第四版,傳遞參數 (方法二)
     ///// 建立一個 MyThread.cs的檔案
     class MyThread
     {
@@ -254,7 +254,7 @@ Code area 5: 後台線程,前台線程
 */
 
 /*
-Code area 5: 線程池
+Code area 6: 線程池
   1. Ref: https://www.youtube.com/watch?v=iqLK9pjpFiU&list=PLJgD_fXVXZKpI1FIW0ZtT_lLnML8uPhST&index=47
     0:00~2:16 說明重要
       1:16 I/O Thread: 文件讀取/移動
@@ -277,4 +277,57 @@ Code area 5: 線程池
         ThreadPool.QueueUserWorkItem(ThreadMethod);
         ThreadPool.QueueUserWorkItem(ThreadMethod);
     }
+*/
+
+/*
+Code area 7: 任務 (Task)
+    static void ThreadMethod(object state) {
+        Debug.WriteLine("Task開始:");
+        Thread.Sleep(2000);
+        Debug.WriteLine("Task結束");
+    }
+
+    a.方法一
+    static void Main(string[] args) {
+        Task t = new Task(ThreadMethod);    //傳遞一個需要Thread去執行的方法
+        t.Start();
+        Debug.WriteLie("Main");   
+    }
+
+    b.方法二
+    static void Main(string[] args) {
+        TaskFactory tf = new TaskFactory();
+        Task t = tf.StartNew(ThreadMethod);
+        Debug.WriteLie("Main");   
+    }
+*/
+
+
+/*
+Code area 8: 任務的其他知識
+  1. Ref: https://www.youtube.com/watch?v=V-nLRXNkXA4&list=PLJgD_fXVXZKpI1FIW0ZtT_lLnML8uPhST&index=49
+    a. 無實際code,只有概念說明
+    b. 連續任務: 任務 t1 的執行是依賴於另一個任務 t2, 那就需要在此任務 t2 執行完後,再開始執行 t1
+    c. 任務層次結構: WaitingForChildrenToComplete, RunToCompletion
+
+    a.範例1
+    static void DoFirst() {
+        Debug.WriteLine("線程開始:" + Thread.CurrentThread.ManagedThreadId);
+        Thread.Sleep(3000);
+        Debug.WriteLine("線程姞束");
+    }
+
+    static void DoSecondTask(Task t) {
+        Debug.WriteLine("task" + t.id + "finished");
+        Debug.WriteLine("線程開始:" + Thread.CurrentThread.ManagedThreadId);
+        Thread.Sleep(3000);
+        Debug.WriteLine("線程姞束");
+    }
+
+    Task t1 = new Task(DoFirst);
+    Task t2 = t1.ContinueWith(DoSecond);
+    Task t3 = t1.ContinueWith(DoSecond);
+    Task t4 = t2.ContinueWith(DoSecond);
+
+    Task t5 = t1.ContinueWith(DoError, TaskContinuationOptions.OnlyOnFaulted);
 */
