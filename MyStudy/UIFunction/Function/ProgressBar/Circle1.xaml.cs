@@ -41,6 +41,24 @@ namespace UIFunction.Function.ProgressBar
             ARC2.EndAngle = sldr.Value * 3.6;
             ARC1.Fill = this.Resources["FillBrush"] as RadialGradientBrush;
             ARC2.Fill = this.Resources["FillBrush"] as RadialGradientBrush;
+            // From 0 degree
+            //ARC30.StartAngle = 0f;
+            //ARC30.EndAngle = sldr.Value * 3.6;
+            //ARC31.StartAngle = 1f;
+            //ARC31.EndAngle = sldr.Value * 3.6 - 1f;
+            //ARC32.StartAngle = 1f;
+            //ARC32.EndAngle = sldr.Value * 3.6 - 1f;
+
+            // From 270 degree
+            ARC30.StartAngle = 270 + 0f;
+            double endAngle = 270 + sldr.Value * 1.8;
+            if (endAngle > 360)
+                endAngle = endAngle - 360;
+            ARC30.EndAngle = endAngle;
+            ARC31.StartAngle = 270 + 1f;
+            ARC31.EndAngle = endAngle - 1f;
+            ARC32.StartAngle = 270 + 1f;
+            ARC32.EndAngle = endAngle - 1f;
         }
     }
 }

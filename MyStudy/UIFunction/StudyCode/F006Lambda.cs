@@ -33,3 +33,4 @@ Code area 1: Lambda表達式
     Debug.WriteLine(f(3)); //結果是8
     somVal = 7;
     Debug.WriteLine(f(3)); //結果是10
+*/

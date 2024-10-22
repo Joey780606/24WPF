@@ -6,18 +6,19 @@
              xmlns:local="clr-namespace:UIFunction.Function.ProgressBar"
              xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="1200">
     <UserControl.Resources>
         <RadialGradientBrush x:Key="FillBrush" GradientOrigin="0.5,0.5"
                              Center="0.5,0.5"
                              RadiusX="0.5"
                              RadiusY="0.5">
-            <GradientStop Color="#FFF9c4" Offset="0" />
+            <GradientStop Color="Red" Offset="0" />
             <GradientStop Color="#FFEB3B" Offset="1" />
         </RadialGradientBrush>
     </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
@@ -33,6 +34,24 @@
                 Stretch="None"
                 ArcThickness="15"
                 ArcThicknessUnit="Percent" />
+        <ed:Arc x:Name="ARC30" Grid.Column="2"
+                Fill="White"
+                Height="300" Width="300"
+                Stretch="None"
+                ArcThickness="15"
+                ArcThicknessUnit="Pixel" />
+        <ed:Arc x:Name="ARC31" Grid.Column="2"
+                Fill="Black"
+                Height="300" Width="300"
+                Stretch="None"
+                ArcThickness="15"
+                ArcThicknessUnit="Pixel" />
+        <ed:Arc x:Name="ARC32" Grid.Column="2"
+                Fill="Yellow"
+                Height="290" Width="290"
+                Stretch="None"
+                ArcThickness="3"
+                ArcThicknessUnit="Pixel" />
         <Slider Height="20" Grid.ColumnSpan="2"
                 VerticalAlignment="Center"
                 Maximum="100" ValueChanged="Slider_ValueChanged" />
