@@ -14,6 +14,7 @@
         set
         {
             //重點1: Action + Lambda表示法, 把函式當參數放進去
+            //會這樣做是因為有很多地方會用到delegate Action,只有部分處理會不一樣,所以可用些方式,把不同處放在function裡,相同處在此處理,可以省code (猜測)
             CheckFanSpeedSetting(value, SelectedFanMode.Speed, (int newValue) =>
             {
                 SelectedFanMode.Speed = newValue;

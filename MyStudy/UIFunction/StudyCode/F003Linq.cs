@@ -31,7 +31,7 @@ Code area 1:
 
     public override string ToString() {
     {
-        return string.Format("Id:{0} , Name:{1} , Age:{2}", Id, Name, Power);
+        return string.Format("Id:{0} , Name:{1} , Power:{2}", Id, Name, Power);
     }
   }
 
