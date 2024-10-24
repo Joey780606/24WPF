@@ -5,8 +5,44 @@
 4. Func 是可以回傳值的 delegate
  */
 
+
 /*
-Code area 1: 通用類別的冒泡排序法 [Generic]
+ Code area 1: Func 委托
+  1. Ref: https://www.youtube.com/watch?v=W2EDHXYF8XM&list=PLJgD_fXVXZKpI1FIW0ZtT_lLnML8uPhST&index=77
+    0:18 Action, Func委托的樣式
+    0:41 Func要有返回值,放在最後面,傳遞0~16個參數類型,和一個返回類型
+    7:39 PPT說明
+
+    a. 程式1: Program.cs
+    class Program {
+        static int Test1()
+        {
+            return 1;
+        }
+
+        static int Test2(string str) {
+            Debug.WriteLine(str);
+            return 100;
+        }
+
+        static int Test3(int i, int j) {
+            return i + j;
+        }
+
+        static void Main(string[] args) {
+            Func<int> a = Test1;    //後面不要加(), Func裡的int是方法的返回值類型
+            Console.WriteLine(a());
+
+            Func<string, int> b = Test2;    //Func後可跟很多類型,最後一個類型是返回值類型
+
+            Func<int, int, int> a = Test3;
+            int res = a(1,5);
+        }
+    }
+*/
+
+/*
+Code area 2: 通用類別的冒泡排序法 [Generic]
   1. Ref: https://www.youtube.com/watch?v=bzw-0k8LbXg&list=PLJgD_fXVXZKpI1FIW0ZtT_lLnML8uPhST&index=17
     a. Employee 類
     class Employee {
@@ -63,7 +99,7 @@ Code area 1: 通用類別的冒泡排序法 [Generic]
 */
 
 /*
-Code area 2: 匿名方法
+Code area 3: 匿名方法
   1. Ref: https://www.youtube.com/watch?v=S-sKhKCkl4g&list=PLJgD_fXVXZKpI1FIW0ZtT_lLnML8uPhST&index=19
     a. 
     static int Test1(int arg1, int arg2)
