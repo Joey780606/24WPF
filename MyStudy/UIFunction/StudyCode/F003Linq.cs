@@ -95,7 +95,7 @@ Code area 2: 擴展方法,表達式寫法 (where)
         };
 
         // 1. 擴展方式寫法
-        var res = masterList.Where(Test1);  
+        var res = masterList.Where(Test1);  // Test1 是函式,在下方
         // where ref: https://learn.microsoft.com/en-us/dotnet/api/system.linq.enumerable.where?view=net-8.0
         // Where<TSource>(IEnumerable<TSource>, Func<TSource,Boolean>)  //後面的Func 是 delegate, 可指定一個函式,其參數是TSource,回傳值是Boolean值
 
@@ -161,6 +161,38 @@ Code area 3: 集合聯合查詢 (二個list整合在一起做比較)
             from k in kongfuList
             where m.Kongfu == k.Name && k.Power > 90
             select m;
+
+        foreach (var temp in res)
+        {
+            Debug.WriteLine(temp);
+        }
+    }
+  }
+*/
+
+/*
+Code area 4: 集合聯合查詢 擴展方法 
+  1. Ref: https://www.youtube.com/watch?v=BlqAZSp8hls&list=PLJgD_fXVXZKpI1FIW0ZtT_lLnML8uPhST&index=28
+  2. MartialArtsMaster.cs, Kongfu.cs 皆與上方 Code area 1 一致
+  3. Program.cs
+  class Program {
+    static void Main(string[] args) {
+        var masterList = new List<MartialArtsMaster> () 
+        {
+            new MartialArtsMaster() {Id = 1, Name = "AA", Age = 18, Menpai = "AAA", Kongfu = "AAAA", Level = 9},
+            new MartialArtsMaster() {Id = 2, Name = "BB", Age = 70, Menpai = "AAA", Kongfu = "AAAA", Level = 10}
+        };
+
+        var kongfu = new List<Kongfu>()
+        {
+            new Kongfu() {Id = 1, Name = "AAAA", Age = 18, Power = 90},
+            new Kongfu() {Id = 2, Name = "BBBB", Age = 18, Power = 95}
+        };
+
+        //var res = masterList.SelectMany(m => kongfuList, (m,k) => new { master = m, kongfu = k});   //3:20
+        var res = masterList.SelectMany(m => kongfuList, (m,k) => new { master = m, kongfu = k})
+            .Where(x => x.master.Kongfu == x.kongfu.Name && x.kongfu.Power > 90);
+            //6:00 作者說用到很多委託
 
         foreach (var temp in res)
         {
