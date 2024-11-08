@@ -302,13 +302,15 @@ Code area 7: 任務 (Task)
     }
 */
 
-
 /*
 Code area 8: 任務的其他知識
   1. Ref: https://www.youtube.com/watch?v=V-nLRXNkXA4&list=PLJgD_fXVXZKpI1FIW0ZtT_lLnML8uPhST&index=49
     a. 無實際code,只有概念說明
     b. 連續任務: 任務 t1 的執行是依賴於另一個任務 t2, 那就需要在此任務 t2 執行完後,再開始執行 t1
-    c. 任務層次結構: WaitingForChildrenToComplete, RunToCompletion
+    c. 任務層次結構: WaitingForChildrenToComplete, 
+        WaitingForChildrenToComplete: 在一任務(父任務)中啟動一個新任務(子任務),二任務非同步執行,若父任務執行完,子任務還沒完,父任務狀態就會設為此
+            若子任務執行完了,父任務的狀態就會變成 RunToCompletion (4:24有範例)
+        4:42 有說,Thread無父子關係,但任務有
 
     a.範例1
     static void DoFirst() {
@@ -330,4 +332,82 @@ Code area 8: 任務的其他知識
     Task t4 = t2.ContinueWith(DoSecond);
 
     Task t5 = t1.ContinueWith(DoError, TaskContinuationOptions.OnlyOnFaulted);
+*/
+
+/*
+Code area 8: Thread爭用條件和死鎖
+  1. Ref: https://www.youtube.com/watch?v=yGnEGZ0TD3Q&list=PLJgD_fXVXZKpI1FIW0ZtT_lLnML8uPhST&index=50
+    a. 課程重點
+    0:21 爭用條件: 當有多個Thread訪問一變量時,會產生衝突,解決方式是鎖
+    7:00~7:28 解說,重要
+    7:46 如何解決此問題?
+    8:11 加lock的方式
+    11:07~12:44 死鎖的說明和例子
+    12:45 如何解決死鎖?
+
+    b. 範例1:
+    class MyThreadObject
+    {
+        private int state = 5;
+
+        public void ChangeState()
+        {
+            state++;
+            if(state == 5)
+            {
+                Debug.WriteLine("state=5");
+            }
+            state = 5;  //如果有二個以上的Thread,會因為Thread A把這個變成5,但 Thread B讀到上方的 if判斷,就會印出Debug訊息
+        }
+    }
+
+    class Program {
+        static void ChangeState(object o)
+        {
+            MyThreadObject m = o as MyThreadObject;
+            while(true)
+            {
+                lock(m) //向系統申請可否鎖定m對象,若m對象沒被鎖定,那可以讓m被鎖定並使用, 但己被別Thread鎖定,那就會暫停在此,直到可以申請到m對象
+                // lock只能鎖定class,不能鎖定值
+                {
+                    m.ChangeState();    //在同一時刻, 只有一個 Thread 在執行此方法
+                }   //釋放對 m 的鎖定
+            }
+        }
+
+        static void Main(string[] args) {
+            //MyThreadObject m = new MyThreadObject();  //一開始這樣用
+            //Thread t = new Thread(m.ChangeState);
+
+            MyThreadObject m = new MyThreadObject();
+            Thread t = new Thread(ChangeState);
+            t.Start(m);
+
+            Console.ReadKey();  //這樣不會出現訊息,因為這是一個Thread在調用此方法
+        }
+    }
+
+    c. 範例2: 二個Thread調用此方法
+      MyThreadObject class 同 b 
+
+    class Program {
+        static void ChangeState(object o)   //這個也和上述b相同
+        {
+            MyThreadObject m = o as MyThreadObject;
+            while(true)
+            {
+                m.ChangeState();
+            }
+        }
+
+        static void Main(string[] args) {
+            MyThreadObject m = new MyThreadObject();
+            Thread t = new Thread(ChangeState);
+            t.Start(m);
+
+            new Thread(ChangeState).Start(m);   //這樣有二個Thread來執行 ChangeState
+
+            Console.ReadKey();  
+        }
+    }
 */
