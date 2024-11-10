@@ -14,6 +14,8 @@ Issue: Design pattern:
      A fully initialized instance to be copied or cloned
     1.5 Singleton
      A class of which only a single instance can exist
+    1.6 Simple factory
+     應該先從簡單工廠模式 > 工廠模式(1.3) > 抽象工廠模式(1.1)
 
     Structural Patterns
     2.1 Adapter
