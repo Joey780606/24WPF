@@ -1,5 +1,5 @@
 ﻿/*
-1. Function: Abstract factory design patter
+1. Function: Abstract factory design pattern
 2. Detail: Find some documents and related code.
 3. Keyword:
 4. 

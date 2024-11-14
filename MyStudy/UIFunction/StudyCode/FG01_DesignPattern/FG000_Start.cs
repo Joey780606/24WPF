@@ -56,4 +56,7 @@ Issue: Design pattern:
      Defer the exact steps of an algorithm to a subclass
     3.11 Visitor
      Defines a new operation to a class without change
+
+    其他重要項目
+    4.1 依賴反轉 (Dependency inversion)
 */
