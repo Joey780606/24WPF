@@ -5,6 +5,8 @@ VisualStudioVersion = 17.8.34511.84
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UIFunction", "UIFunction\UIFunction.csproj", "{CE0056BB-D791-424A-9CC4-663E75DA45F4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2025Study", "2025Study\2025Study.csproj", "{841510BF-BC8A-4943-A4C1-1DB54F1D58CB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,18 @@ Global
 		{CE0056BB-D791-424A-9CC4-663E75DA45F4}.Release|x64.Build.0 = Release|x64
 		{CE0056BB-D791-424A-9CC4-663E75DA45F4}.Release|x86.ActiveCfg = Release|x86
 		{CE0056BB-D791-424A-9CC4-663E75DA45F4}.Release|x86.Build.0 = Release|x86
+		{841510BF-BC8A-4943-A4C1-1DB54F1D58CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{841510BF-BC8A-4943-A4C1-1DB54F1D58CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{841510BF-BC8A-4943-A4C1-1DB54F1D58CB}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{841510BF-BC8A-4943-A4C1-1DB54F1D58CB}.Debug|x64.Build.0 = Debug|Any CPU
+		{841510BF-BC8A-4943-A4C1-1DB54F1D58CB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{841510BF-BC8A-4943-A4C1-1DB54F1D58CB}.Debug|x86.Build.0 = Debug|Any CPU
+		{841510BF-BC8A-4943-A4C1-1DB54F1D58CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{841510BF-BC8A-4943-A4C1-1DB54F1D58CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{841510BF-BC8A-4943-A4C1-1DB54F1D58CB}.Release|x64.ActiveCfg = Release|Any CPU
+		{841510BF-BC8A-4943-A4C1-1DB54F1D58CB}.Release|x64.Build.0 = Release|Any CPU
+		{841510BF-BC8A-4943-A4C1-1DB54F1D58CB}.Release|x86.ActiveCfg = Release|Any CPU
+		{841510BF-BC8A-4943-A4C1-1DB54F1D58CB}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
