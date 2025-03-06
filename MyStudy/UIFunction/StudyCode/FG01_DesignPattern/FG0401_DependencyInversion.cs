@@ -7,5 +7,6 @@
 
 /*
 1. 中文說明
-  https://ithelp.ithome.com.tw/articles/10191603
+  https://ithelp.ithome.com.tw/articles/10191603 (觀念重要)
+  https://hackmd.io/@kenny88881234/rJwqJbT4S (加入IOC (Inversion of Control),概念重要)
 */
