@@ -9,6 +9,6 @@
       Title="Page002">
 
     <Grid>
-        <TextBlock>Page 2</TextBlock>        
+        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">Page 2</TextBlock>        
     </Grid>
 </Page>

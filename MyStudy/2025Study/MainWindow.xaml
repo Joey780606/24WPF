@@ -30,7 +30,7 @@
             </StackPanel>
 
         </Grid>
-        <Frame Grid.Row="1" Name="MyFrame" MinHeight="500" Background="Red">
+        <Frame Grid.Row="1" x:Name="MyFrame"  Background="LightBlue">
 
         </Frame>
     </Grid>
