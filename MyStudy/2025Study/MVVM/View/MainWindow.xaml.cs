@@ -17,6 +17,8 @@ using _2025Study.PageLearn;
  *   a. 'InitializeComponent' does not exist in the current context 的錯誤
  *     1.參: https://stackoverflow.com/questions/6925584/the-name-initializecomponent-does-not-exist-in-the-current-context
  *       . Delete the \obj folder  . Rebuild the solution
+ *   b. 加入MVVM機制
+ *     1.參: https://www.youtube.com/watch?v=wFzmBZpjuAo
  */
 namespace _2025Study
 {
