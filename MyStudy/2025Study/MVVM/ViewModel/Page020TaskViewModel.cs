@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _2025Study.MVVM.ViewModel
 {
-    class Page020TaskViewModel
+    public class Page020TaskViewModel : Core.ViewModel
     {
     }
 }

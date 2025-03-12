@@ -17,9 +17,12 @@
                 <ColumnDefinition Width="1*" />
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
-            <ComboBox Grid.Column="0" x:Name="functionCbx" HorizontalAlignment="Left" VerticalAlignment="Center" Width="200" Background="AliceBlue">
+            <StackPanel Orientation="Horizontal">
+                <ComboBox x:Name="functionCbx" HorizontalAlignment="Left" VerticalAlignment="Center" Width="200" Background="AliceBlue">
+                </ComboBox>
+                <Button Content="TestPage2" Height="25" Command="{Binding Path=NavigateToPage002Command}"/>
+            </StackPanel>
 
-            </ComboBox>
             <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
                 <Button Name="btnSubmit" Click="Button_Click" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10">
                     <TextBlock>Submit</TextBlock>
@@ -30,8 +33,13 @@
             </StackPanel>
 
         </Grid>
+        <!--
         <Frame Grid.Row="1" x:Name="MyFrame"  Background="LightBlue">
 
         </Frame>
+         -->
+        <ContentControl Grid.Row="1" Content="{Binding Path=Navigation.CurrentView}">
+            
+        </ContentControl>
     </Grid>
 </Window>

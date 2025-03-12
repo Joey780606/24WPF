@@ -4,6 +4,7 @@
              xmlns:local="clr-namespace:_2025Study"
              xmlns:viewModel="clr-namespace:_2025Study.MVVM.ViewModel"
              xmlns:view="clr-namespace:_2025Study.MVVM.View">
+    <!-- Ref 1-b 3:31 -->
     <Application.Resources>
         <DataTemplate DataType="{x:Type TypeName=viewModel:Page001ViewModel }">
             <view:Page001/>

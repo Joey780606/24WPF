@@ -18,7 +18,7 @@ namespace _2025Study.MVVM.View
     /// <summary>
     /// Interaction logic for Page002.xaml
     /// </summary>
-    public partial class Page002 : Page
+    public partial class Page002 : UserControl
     {
         public Page002()
         {
