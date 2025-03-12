@@ -5,7 +5,7 @@ VisualStudioVersion = 17.8.34511.84
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UIFunction", "UIFunction\UIFunction.csproj", "{CE0056BB-D791-424A-9CC4-663E75DA45F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2025Study", "2025Study\2025Study.csproj", "{841510BF-BC8A-4943-A4C1-1DB54F1D58CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MVVMTest", "2025Study\MVVMTest.csproj", "{841510BF-BC8A-4943-A4C1-1DB54F1D58CB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
