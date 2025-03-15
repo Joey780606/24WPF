@@ -1,0 +1,28 @@
+﻿[CLR] Common language runtime
+
+==========
+[CLR] Common language runtime
+是微軟 .NET Framework 的核心元件，它為 .NET 應用程式提供了一個執行環境。以下是 CLR 的主要功能：
+1. 記憶體管理 (Memory Management)：
+垃圾回收 (Garbage Collection) 與 記憶體配置。
+
+2. 程式碼管理：
+JIT 編譯 (Just-In-Time Compilation),程式碼驗證,程式集載入。
+
+3. 安全性 (Security)：
+程式碼存取安全性 (Code Access Security), 類型安全 (Type Safety)
+
+4. 例外處理 (Exception Handling)：
+CLR 提供結構化的例外處理機制，允許開發人員捕獲和處理執行時錯誤。
+
+5. 執行緒管理 (Thread Management)：
+CLR 提供執行緒管理功能，允許開發人員創建和管理多執行緒應用程式。
+
+6. 跨語言互通性 (Cross-Language Interoperability)：
+CLR 允許使用不同 .NET 語言（如 C#、VB.NET）編寫的程式碼相互調用。
+
+7. 基礎類別庫 (Base Class Library, BCL)：
+CLR 提供豐富的基礎類別庫，包含各種常用的類別和方法，簡化開發工作。
+
+總結來說：
+CLR 是一個虛擬機器，它提供了一個受管理的執行環境，讓 .NET 應用程式能夠安全、高效地執行。它負責記憶體管理、程式碼管理、安全性、例外處理、執行緒管理等重要功能，是 .NET Framework 的核心組成部分。

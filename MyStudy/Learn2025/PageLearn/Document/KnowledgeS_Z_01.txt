@@ -1,0 +1,7 @@
+﻿[unsafe]
+
+===
+[unsafe]
+1.使用不安全模式的 C# 代碼將不再受到 CLR(Common language runtime) 的記憶體管理保護，這意味著開發人員需要自己管理記憶體使用。
+2.如何讓程式可使用unsafe的狀態:
+ 在VS的專案點右鍵,選 Properties > Build > General > 允許不安全代碼 (Allow unsafe code.)

@@ -1,0 +1,5 @@
+﻿.NET官方說明,重要頁數和內容
+1. p129, 關鍵字: Built-in types, 有 C# type keyword 和 .NET type的對照.
+2. p131, 關鍵字: Unmanaged types, 意思是不被Garbage collection管理的型態.
+ Memroy分二部分, heap, stack, stack是添加非託管類型的地方. (重要,繼續研究)
+ https://www.youtube.com/watch?v=Ci46bXzPTbc
