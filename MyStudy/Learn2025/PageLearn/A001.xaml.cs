@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using Learn2025.PageLearn.NonUIProgram;
 /*
  * A001-01 Array : 讀 p117 ~ p127 (看 p117
  * 
@@ -42,6 +42,11 @@ namespace Learn2025.PageLearn
             int[,] multiDimensionalArray2 = { { 1, 2, 3 }, { 4, 5, 6 } };
             int[][] jaggedArray = new int[6][];
             jaggedArray[0] = new int[4] { 1, 2, 3, 4 };
+        }
+
+        private void A001Abstract_Click(object sender, RoutedEventArgs e)
+        {
+            P_001Abstract.MyTest();
         }
     }
 }

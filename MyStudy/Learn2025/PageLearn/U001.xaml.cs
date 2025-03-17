@@ -42,7 +42,8 @@ namespace Learn2025.PageLearn
             Debug.WriteLine($"{typeof(T)} is unmanaged and its size is {sizeof(T)} bytes");
         }
         
-        public struct P001_03Coords<T>  \
+        public struct P001_03Coords<T>
+        // public struct P001_03Coords<T> where T : unmanaged  //也可這樣設定
         {
             public T X;
             public T Y;

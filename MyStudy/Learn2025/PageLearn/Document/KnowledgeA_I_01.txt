@@ -1,5 +1,5 @@
 ﻿[CLR] Common language runtime
-
+[internal]
 ==========
 [CLR] Common language runtime
 是微軟 .NET Framework 的核心元件，它為 .NET 應用程式提供了一個執行環境。以下是 CLR 的主要功能：
@@ -26,3 +26,8 @@ CLR 提供豐富的基礎類別庫，包含各種常用的類別和方法，簡�
 
 總結來說：
 CLR 是一個虛擬機器，它提供了一個受管理的執行環境，讓 .NET 應用程式能夠安全、高效地執行。它負責記憶體管理、程式碼管理、安全性、例外處理、執行緒管理等重要功能，是 .NET Framework 的核心組成部分。
+
+[internal]
+外面找的資料:
+1. 是給同一namespace的class使用
+2. 參: https://vocus.cc/article/6421758ffd897800017dfe48

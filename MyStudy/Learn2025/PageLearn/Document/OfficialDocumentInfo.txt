@@ -3,3 +3,12 @@
 2. p131, 關鍵字: Unmanaged types, 意思是不被Garbage collection管理的型態.
  Memroy分二部分, heap, stack, stack是添加非託管類型的地方. (重要,繼續研究)
  https://www.youtube.com/watch?v=Ci46bXzPTbc
+3. p133, C# type的預設值
+4. p135, C# 的關鍵字(Keywords) (要一個一個看)
+5. p137, Contextual keywords
+6. p139, file的部分要研究一下
+7. p142, enum, class, interface, struct的default member存取,及成員存取的設定
+8. p147, accessibility level的限制
+9. p151, internal的用法,有點難,要找實作
+10. p165, private protected (不太懂,也少用,先可不看)
+11. p168, file,C#11 的type modifier.
