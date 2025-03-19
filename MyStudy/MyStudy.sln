@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UIFunction", "UIFunction\UI
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MVVMTest", "2025Study\MVVMTest.csproj", "{841510BF-BC8A-4943-A4C1-1DB54F1D58CB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learn2025", "Learn2025\Learn2025.csproj", "{9AB4F415-3276-4939-A74C-3B6F6767D33F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Learn2025", "Learn2025\Learn2025.csproj", "{9AB4F415-3276-4939-A74C-3B6F6767D33F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

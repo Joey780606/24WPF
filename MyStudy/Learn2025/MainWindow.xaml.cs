@@ -18,7 +18,29 @@ using Learn2025.PageLearn;
  *       . Delete the \obj folder  . Rebuild the solution
  *       
  * 2. 文件從100頁開始 p100~p174
- *   a. 可直接看的程式: p103,p106(不允許的例子),p144
+ *   a. 可直接看的程式: p103,p106(不允許的例子),p144, p179(const)
+ *   
+ * 3. Launcher程式包要再加範例的
+ *   a. System.Threading.Mutex
+ *   b. DispatcherTimer? checkSoftwareTimer;
+ *   c. System.Environment
+ *    c-2. GetFolderPath, SpecialFolder
+ *   d. System.Globalization
+ *   e. System.Threading.Timer
+ *   f. NotifyIcon
+ *   g. using的用法, using var stream = System.Windows.Application.GetResourceStream(uri)?.Stream;
+ *   h. Process (new Process)
+ *   i. System.Windows.Application.Current.Shutdown();
+ *   j. System.DateTime
+ *   k. StreamReader
+ *   l. DialogResult
+ *   m. System.IO.Path
+ *    m-2. System.IO.Directory
+ *   n. HttpClient
+ *   o. TimeSpan
+ *   p. HttpResponseMessage
+ *   q. ProcessStartInfo
+ *   r. GetIconFromImageSource
  */
 namespace Learn2025
 {
@@ -27,7 +49,7 @@ namespace Learn2025
     /// </summary>
     public partial class MainWindow : Window
     {
-        private string[] _functionInfo = { "Fuction1", "Function2", "Page20Task" , "A001", "C001", "D001", "N001", "U001" };
+        private string[] _functionInfo = { "Fuction1", "Function2", "Page20Task" , "A001", "C001", "D001", "E001", "N001", "U001" };
         public MainWindow()
         {
             InitializeComponent();
@@ -53,6 +75,8 @@ namespace Learn2025
                 MyFrame.Content = new C001();
             else if (functionCbx.SelectedItem.ToString() == "D001")
                 MyFrame.Content = new D001();
+            else if (functionCbx.SelectedItem.ToString() == "E001")
+                MyFrame.Content = new E001();
             else if (functionCbx.SelectedItem.ToString() == "N001")
                 MyFrame.Content = new N001();
             else if (functionCbx.SelectedItem.ToString() == "U001")

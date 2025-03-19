@@ -13,6 +13,8 @@
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top">
                 <Button x:Name="A001Array" Content="Array" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5" Click="A001Array_Click"/>
                 <Button x:Name="A001Abstract" Content="Abstract" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5" Click="A001Abstract_Click"/>
+                <Button x:Name="A001Async" Content="Async" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5" Click="A001Async_Click"/>
+                <TextBox x:Name="MyTextBox1" Width="137" TextWrapping="Wrap"></TextBox>
             </StackPanel>
         </ScrollViewer>        
     </Grid>

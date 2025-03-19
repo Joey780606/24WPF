@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -47,6 +48,28 @@ namespace Learn2025.PageLearn
         private void A001Abstract_Click(object sender, RoutedEventArgs e)
         {
             P_001Abstract.MyTest();
+        }
+
+        private async void A001Async_Click(object sender, RoutedEventArgs e)
+        {
+            MyTextBox1.Text += "\n";
+            try
+            {
+                int length = await Async001Method();
+                MyTextBox1.Text += String.Format("Length: {0:N0}\n", length);
+            }
+            catch (Exception)
+            {
+                MyTextBox1.Text += "Some error happen.";
+            }
+        }
+
+        public async Task<int> Async001Method()
+        {
+            var httpClient = new HttpClient();
+            int exampleInt = (await httpClient.GetStringAsync("http://msdn.microsoft.com")).Length;
+            MyTextBox1.Text += "Preparing to finish ExampleMethodAsync. \n";
+            return exampleInt;
         }
     }
 }
