@@ -1,0 +1,19 @@
+﻿<Page x:Class="Learn2025.PageLearn.P001"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Learn2025.PageLearn"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="P001">
+
+    <Grid>
+        <StackPanel Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <TextBlock Text="Pattern matching: Expressions: is, switch; Operators: and, or , not"/>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left">
+                <Button x:Name="B01_Property" Content="Property" Click="B01_Property_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

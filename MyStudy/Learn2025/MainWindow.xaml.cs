@@ -49,7 +49,7 @@ namespace Learn2025
     /// </summary>
     public partial class MainWindow : Window
     {
-        private string[] _functionInfo = { "Fuction1", "Function2", "Page20Task" , "A001", "C001", "D001", "E001", "N001", "U001" };
+        private string[] _functionInfo = { "Fuction1", "Function2", "Page20Task" , "A001", "C001", "D001", "E001", "N001", "P001", "U001" };
         public MainWindow()
         {
             InitializeComponent();
@@ -79,6 +79,8 @@ namespace Learn2025
                 MyFrame.Content = new E001();
             else if (functionCbx.SelectedItem.ToString() == "N001")
                 MyFrame.Content = new N001();
+            else if (functionCbx.SelectedItem.ToString() == "P001")
+                MyFrame.Content = new P001();
             else if (functionCbx.SelectedItem.ToString() == "U001")
                 MyFrame.Content = new U001();
         }
