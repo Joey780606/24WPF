@@ -71,5 +71,19 @@ namespace Learn2025.PageLearn
             MyTextBox1.Text += "Preparing to finish ExampleMethodAsync. \n";
             return exampleInt;
         }
+
+        private void A001Action_Click(object sender, RoutedEventArgs e)
+        {
+            Action action1 = () => MyTextBox1.Text += "Action 1 executed.\n";
+            Action action2 = () => MyTextBox1.Text += "Action 2 executed.\n";
+            Action action3 = () => MyTextBox1.Text += "Action 3 executed.\n";
+            Action[] actions = { action1, action2, action3 };
+            foreach (var action in actions)
+            {
+                action();
+            }
+            MyTextBox1.Text += "All actions executed.\n";
+
+        }
     }
 }

@@ -41,6 +41,8 @@ using Learn2025.PageLearn;
  *   p. HttpResponseMessage
  *   q. ProcessStartInfo
  *   r. GetIconFromImageSource
+ *   
+ * 4. 要做一個 ListBox,可以一直放訊息的
  */
 namespace Learn2025
 {
@@ -79,8 +81,12 @@ namespace Learn2025
                 MyFrame.Content = new E001();
             else if (functionCbx.SelectedItem.ToString() == "N001")
                 MyFrame.Content = new N001();
+            else if (functionCbx.SelectedItem.ToString() == "O001")
+                MyFrame.Content = new O001();
             else if (functionCbx.SelectedItem.ToString() == "P001")
                 MyFrame.Content = new P001();
+            else if (functionCbx.SelectedItem.ToString() == "R001")
+                MyFrame.Content = new R001();
             else if (functionCbx.SelectedItem.ToString() == "U001")
                 MyFrame.Content = new U001();
         }
