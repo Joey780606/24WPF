@@ -12,6 +12,7 @@
         <ScrollViewer VerticalScrollBarVisibility="Auto">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top">
                 <Button x:Name="D001Default" Content="Default" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5" Click="D001Default_Click"/>
+                <Button x:Name="D001Double" Content="Double" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5" Click="D001Double_Click"/>
             </StackPanel>
         </ScrollViewer>        
     </Grid>

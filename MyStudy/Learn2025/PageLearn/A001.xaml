@@ -16,6 +16,8 @@
                 <Button x:Name="A001Async" Content="Async" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5" Click="A001Async_Click"/>
                 <TextBox x:Name="MyTextBox1" Width="137" TextWrapping="Wrap"></TextBox>
                 <Button x:Name="A001Action" Content="Action" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5" Click="A001Action_Click" />
+                <Button x:Name="A001Action2" Content="Action2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5" Click="A001Action2_Click" />
+                <Button x:Name="A001Action3" Content="Action3" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5" Click="A001Action3_Click" />
             </StackPanel>
         </ScrollViewer>        
     </Grid>

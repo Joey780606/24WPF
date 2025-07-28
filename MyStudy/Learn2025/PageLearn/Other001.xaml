@@ -1,4 +1,4 @@
-﻿<Page x:Class="Learn2025.PageLearn.R001"
+﻿<Page x:Class="Learn2025.PageLearn.Other001"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,13 +6,14 @@
       xmlns:local="clr-namespace:Learn2025.PageLearn"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="R001">
+      Title="Other001">
 
     <Grid>
         <ScrollViewer VerticalScrollBarVisibility="Auto">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top">
-                <Button x:Name="R001ReferenceType" Content="ReferenceType" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5" Click="R001ReferenceType_Click"/>
-                <Button x:Name="R002ReferenceType" Content="ReferenceType2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5" Click="R002ReferenceType_Click"/>
+                <Button x:Name="Ot001Dot" Content=".Dot" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5" Click="Ot001Dot_Click" />
+                <Button x:Name="Ot001Null_conditional" Content="?. ?[]" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5" Click="Ot001Null_conditional_Click" />
+                <Button x:Name="Ot001Null_conditional2" Content="?. ?[]2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5" Click="Ot001Null_conditional2_Click" />
             </StackPanel>
         </ScrollViewer>
     </Grid>

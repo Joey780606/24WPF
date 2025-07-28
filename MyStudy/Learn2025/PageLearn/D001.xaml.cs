@@ -36,5 +36,11 @@ namespace Learn2025.PageLearn
             var d = new System.Numerics.Complex(2, 3);
             Debug.WriteLine($"Default result: {a}, {b}, {c}, {d}");
         }
+
+        private void D001Double_Click(object sender, RoutedEventArgs e)
+        {
+            Debug.WriteLine($"double.NaN < 5.1: " + (double.NaN < 5.1));    //output: False
+            Debug.WriteLine($"double.NaN >= 5.1: " + (double.NaN >= 5.1));    //output: False
+        }
     }
 }

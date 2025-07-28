@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
@@ -83,7 +84,34 @@ namespace Learn2025.PageLearn
                 action();
             }
             MyTextBox1.Text += "All actions executed.\n";
+        }
 
+        private void A001Action2_Click(object sender, RoutedEventArgs e)
+        {   // Official document: p395, Delegate equality: 都是 null, 或他們的呼叫列表(invocation lists)長度相同,且每個位置的 entries 都相同 
+            Action a = () => Debug.WriteLine("a");
+
+            Action b = a + a;
+            Action c = a + a;
+            Debug.WriteLine("1. Object.ReferenceEquals(b, c): " + Object.ReferenceEquals(b, c));  // Output: False, 因為 b 和 c 的呼叫列表長度相同，但它們是不同的實例
+            Debug.WriteLine("2. b == c: " + (b == c) );    // Output: True, 因為它們的呼叫列表相同 (都是呼叫兩次 a)
+
+            Action d = () => Debug.WriteLine("d");
+            Action e2 = () => Debug.WriteLine("e2");
+
+            Debug.WriteLine("3. d == e2: " + (d == e2));    // Output: False, 因為 d 和 e 是不同的實例，即使它們的內容相同
+            Debug.WriteLine("4. d + e2 == d + 2: " + (d + e2 == d + e2));    // Output: True, 因為它們的呼叫列表相同 (都是呼叫 d 和 e2)
+            Debug.WriteLine("5. e2 + d == d + e2: " + (e2 + d == d + e2));    // Output: True, 因為呼叫列表的順序不影響相等性 (即使順序不同，內容相同仍然被視為相等)
+        }
+
+        private void A001Action3_Click(object sender, RoutedEventArgs e)
+        {
+            Action<int> display = s => Debug.WriteLine(s);
+
+            List<int> numbers = [10, 17];
+            display(numbers.Count);  // Output: 2, 因為 numbers 中有兩個元素
+
+            numbers.Clear();
+            display(numbers.Count);  // Output: 0, 因為 numbers 已經被清空
         }
     }
 }
