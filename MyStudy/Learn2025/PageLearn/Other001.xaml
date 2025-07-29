@@ -14,6 +14,8 @@
                 <Button x:Name="Ot001Dot" Content=".Dot" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5" Click="Ot001Dot_Click" />
                 <Button x:Name="Ot001Null_conditional" Content="?. ?[]" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5" Click="Ot001Null_conditional_Click" />
                 <Button x:Name="Ot001Null_conditional2" Content="?. ?[]2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5" Click="Ot001Null_conditional2_Click" />
+                <Button x:Name="Ot001FromEndOperator" Content="^" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5" Click="Ot001FromEndOperator_Click" />
+                <Button x:Name="Ot001RangeOperator" Content=".." HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5" Click="Ot001RangeOperator_Click" />
             </StackPanel>
         </ScrollViewer>
     </Grid>

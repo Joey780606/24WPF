@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -31,6 +32,8 @@ namespace Learn2025.PageLearn
             //return setsOfNumbers?[indexOfSetToSum]?.Sum() ?? double.NaN;
             return setsOfNumbers?[indexOfSetToSum]?.Sum() ?? 2.0;   //Joey's testing, 這樣值就會變成2了
         }
+
+        void Ot001Display<T>(IEnumerable<T> xs) => Debug.WriteLine(string.Join(", ", xs));  //重要的寫法
 
         private void Ot001Dot_Click(object sender, RoutedEventArgs e)
         {   // Official document: p400
@@ -71,6 +74,54 @@ namespace Learn2025.PageLearn
             Debug.WriteLine(Ot001_GetSumOfFirstTwoOrDefault(null)); // output: 0
             Debug.WriteLine(Ot001_GetSumOfFirstTwoOrDefault([])); // output: 0
             Debug.WriteLine(Ot001_GetSumOfFirstTwoOrDefault([3, 4, 5])); // output: 7, 處理資料是 [3, 4, 5]
+        }
+
+        private void Ot001FromEndOperator_Click(object sender, RoutedEventArgs e)
+        {   // ^ : 從最後面取得元素
+            int[] xs = [0, 10, 20, 30, 40];
+            int last = xs[^1]; // 使用 ^1 取得最後一個元素
+            Debug.WriteLine($"FromEnd-1: {last}");    // output: 40
+
+            List<string> lines = ["one", "two", "three", "four"];
+            string prelast = lines[^2]; // 使用 ^2 取得倒數第二個元素
+            Debug.WriteLine($"FromEnd-2: {prelast}"); // output: three
+
+            string word = "Twenty";
+            Index toFirst = ^word.Length; // 先取得Length, 然後從最後面開始計算索引, 重要(Index)
+            char first = word[toFirst]; // 取得第一個字符
+            Debug.WriteLine(first); // output: T
+        }
+
+        private void Ot001RangeOperator_Click(object sender, RoutedEventArgs e)
+        {   // Official document: p408
+            int[] numbers = [0, 10, 20, 30, 40, 50];
+            int start = 1;
+            int amountToTake = 3;
+            int[] subset = numbers[start..(start + amountToTake)]; // 使用 .. 取得子數組
+            Debug.WriteLine($"Range1: {start}, {start + amountToTake}");
+            Ot001Display(subset);   // output: 10, 20, 30
+
+            int margin = 1;
+            int[] inner = numbers[margin..^margin]; // 使用 ^ 取得倒數的範圍
+            Ot001Display(inner);    // output: 10, 20, 30, 40
+
+            string line = "one two three";
+            int amountToTakeFromEnd = 5;
+            Range endIndices = ^amountToTakeFromEnd..^0; // 使用 ^ 取得從結尾開始的範圍
+            string end = line[endIndices];
+            Ot001Display(end);
+
+            //= = = = =
+            int amountToDrop = numbers.Length / 2; // 取得數組長度的一半
+
+            int[] rightHalf = numbers[amountToDrop..]; // 使用 .. 取得右半部分
+            Ot001Display(rightHalf); // output: 30, 40, 50
+
+            int[] leftHalf = numbers[..^amountToDrop]; // 使用 ^ 取得左半部分
+            Ot001Display(leftHalf); // output: 0, 10, 20
+
+            int [] all = numbers[..]; // 使用 .. 取得整個數組
+            Ot001Display(all); // output: 0, 10, 20, 30, 40, 50
         }
     }
 }
