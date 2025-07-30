@@ -26,6 +26,9 @@ namespace Learn2025.PageLearn
         {
             InitializeComponent();
         }
+        
+        static void Ot001Write(int[] values, Range range) =>    //第二個參數重要,是Range
+            Debug.WriteLine($"{range}:\t{string.Join(", " ,values[range])}");
 
         double Ot002SumNumbers(List<double[]> setsOfNumbers, int indexOfSetToSum)
         {
@@ -122,6 +125,27 @@ namespace Learn2025.PageLearn
 
             int [] all = numbers[..]; // 使用 .. 取得整個數組
             Ot001Display(all); // output: 0, 10, 20, 30, 40, 50
+
+            //= = = = =
+            Debug.WriteLine("======= Part 3 =======");
+            int[] oneThroughTen = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+            Ot001Write(oneThroughTen, ..);  //取得整個數組
+            Ot001Write(oneThroughTen, ..3); //從頭取到索引3(不含索引3)的元素
+            Ot001Write(oneThroughTen, 2..); //取得從索引2開始到結尾的所有元素
+            Ot001Write(oneThroughTen, 3..5);    //取得索引3到索引5(不包含)的元素
+            Ot001Write(oneThroughTen, ^2..);
+            Ot001Write(oneThroughTen, ..^3);
+            Ot001Write(oneThroughTen, 3..^4);
+            Ot001Write(oneThroughTen, ^4..^2);
+
+            //0..^0:	1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+            //0..3:	    1, 2, 3
+            //2..^0:	3, 4, 5, 6, 7, 8, 9, 10
+            //3..5:	    4, 5
+            //^2..^0:	9, 10
+            //0..^3:	1, 2, 3, 4, 5, 6, 7
+            //3..^4:	4, 5, 6
+            //^4..^2:	7, 8
         }
     }
 }

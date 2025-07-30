@@ -113,5 +113,16 @@ namespace Learn2025.PageLearn
             numbers.Clear();
             display(numbers.Count);  // Output: 0, 因為 numbers 已經被清空
         }
+
+        private void A001As_Click(object sender, RoutedEventArgs e)
+        {   // as : 明確(explicitly)地轉換 expression 的結果,到一個指定的reference,或是nullable value
+            // Official document: p414
+            IEnumerable<int> numbers = new[] { 10, 20, 30 };
+            IList<int> indexable = numbers as IList<int>;
+            if(indexable != null)  // 確認轉換成功
+            {
+                Debug.WriteLine($"indexable add result: {indexable[0] + indexable[indexable.Count - 1]}");  // output: 40
+            }
+        }
     }
 }

@@ -18,6 +18,7 @@
                 <Button x:Name="A001Action" Content="Action" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5" Click="A001Action_Click" />
                 <Button x:Name="A001Action2" Content="Action2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5" Click="A001Action2_Click" />
                 <Button x:Name="A001Action3" Content="Action3" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5" Click="A001Action3_Click" />
+                <Button x:Name="A001As" Content="as" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5" Click="A001As_Click" />
             </StackPanel>
         </ScrollViewer>        
     </Grid>
