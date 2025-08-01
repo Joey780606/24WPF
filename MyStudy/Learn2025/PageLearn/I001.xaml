@@ -12,6 +12,8 @@
         <ScrollViewer VerticalScrollBarVisibility="Auto">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top">
                 <Button x:Name="I001is" Content="is" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5" Click="I001is_Click" />
+                <Button x:Name="I001Interface1" Content="Interface1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5" Click="I001Interface1_Click" />
+                <Button x:Name="I001Implicit" Content="implicit_explicit" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5" Click="I001Implicit_Click" />
             </StackPanel>
         </ScrollViewer>
     </Grid>
